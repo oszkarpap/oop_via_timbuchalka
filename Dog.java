@@ -1,7 +1,7 @@
 package com.timbuchalka;
 
 /**
- * Created by dev on 8/3/15.
+ * Created by dev on 6/07/15.
  */
 public class Dog extends Animal {
 
@@ -29,5 +29,26 @@ public class Dog extends Animal {
         System.out.println("Dog.eat() called");
         chew();
         super.eat();
+    }
+
+    public void walk() {
+        System.out.println("Dog.walk() called");
+        super.move(5);
+    }
+
+    public void run() {
+        System.out.println("Dog.run() called");
+        move(10);
+
+    }
+
+    private void moveLegs(int speed) {
+        System.out.println("Dog.moveLegs() called");
+    }
+    @Override
+    public void move(int speed) {
+        System.out.println("Dog.move() called");
+        moveLegs(speed);
+        super.move(speed);
     }
 }
