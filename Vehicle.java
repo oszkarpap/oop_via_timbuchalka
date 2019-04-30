@@ -1,7 +1,7 @@
 package com.timbuchalka;
 
 /**
- * Created by dev on 8/3/15.
+ * Created by dev on 6/07/15.
  */
 public class Vehicle {
     private String name;
@@ -26,7 +26,7 @@ public class Vehicle {
     public void move(int velocity, int direction) {
         currentVelocity = velocity;
         currentDirection = direction;
-        System.out.println("Vehicle.move(): Moving at " + currentVelocity + " in direction " + currentDirection);
+        System.out.println("Vehicle.move(): Moving at  " + currentVelocity + " in direction " + currentDirection);
 
     }
 
