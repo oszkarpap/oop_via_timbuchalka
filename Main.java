@@ -1,22 +1,102 @@
 package com.timbuchalka;
 
+class Movie {
+    private String name;
+
+    public Movie(String name) {
+        this.name = name;
+    }
+
+    public String plot() {
+        return "No plot here";
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Jaws extends Movie {
+    public Jaws() {
+        super("Jaws");
+    }
+
+    public String plot() {
+        return "A shark eats lots of people";
+    }
+}
+
+class IndependenceDay extends Movie {
+
+    public IndependenceDay() {
+        super("Independence Day");
+    }
+
+    @Override
+    public String plot() {
+        return "Aliens attempt to take over planet earth";
+    }
+}
+
+class MazeRunner extends Movie {
+
+    public MazeRunner() {
+        super("Maze Runner");
+    }
+
+    @Override
+    public String plot() {
+        return "Kids try and escape a maze";
+    }
+}
+
+class StarWars extends Movie {
+    public StarWars() {
+        super("Star Wars");
+    }
+
+    @Override
+    public String plot() {
+        return "Imperial Forces try to take over the universe";
+    }
+}
+
+class Forgetable extends Movie {
+    public Forgetable() {
+        super("Forgetable");
+    }
+
+    // No plot method
+}
+
+
 public class Main {
 
     public static void main(String[] args) {
-        // Create a class and demonstate proper encapsulation techniques
-        // the class will be called Printer
-        // It will simulate a real Computer Printer
-        // It should have fields for the toner Level, number of pages printed, and
-        // also whether its a duplex printer (capable of printing on both sides of the paper).
-        // Add methods to fill up the toner (up to a maximum of 100%), another method to
-        // simulate printing a page (which should increase the number of pages printed).
-        // Decide on the scope, whether to use constructors, and anything else you think is needed.
-        Printer printer = new Printer(50, false);
-        System.out.println("initial page count = " +printer.getPagesPrinted());
-        int pagesPrinted = printer.printPages(4);
-        System.out.println("Pages printed was " + pagesPrinted +" new total print count for printer = " +printer.getPagesPrinted());
-        pagesPrinted = printer.printPages(2);
-        System.out.println("Pages printed was " + pagesPrinted +" new total print count for printer = " +printer.getPagesPrinted());
+	    for(int i=1; i<11; i++) {
+            Movie movie = randomMovie();
+            System.out.println("Movie #" + i +
+                            " : " + movie.getName() + "\n" +
+                            "Plot: " + movie.plot() + "\n");
+        }
+    }
 
+    public static Movie randomMovie() {
+        int randomNumber = (int) (Math.random() * 5) +1;
+        System.out.println("Random number generated was: " + randomNumber);
+        switch (randomNumber) {
+            case 1:
+                return new Jaws();
+            case 2:
+                return new IndependenceDay();
+            case 3:
+                return new MazeRunner();
+            case 4:
+                return new StarWars();
+            case 5:
+                return new Forgetable();
+        }
+
+        return null;
     }
 }
