@@ -1,7 +1,7 @@
 package com.timbuchalka;
 
 /**
- * Created by keanehubertang on 8/3/15.
+ * Created by dev on 16/07/15.
  */
 public class PC {
     private Case theCase;
@@ -14,15 +14,13 @@ public class PC {
         this.motherboard = motherboard;
     }
 
-    public Case getTheCase() {
-        return theCase;
+    public void powerUp() {
+        theCase.pressPowerButton();
+        drawLogo();
     }
 
-    public Monitor getMonitor() {
-        return monitor;
-    }
-
-    public Motherboard getMotherboard() {
-        return motherboard;
+    private void drawLogo() {
+        // Fancy graphics
+        monitor.drawPixelAt(1200, 50, "yellow");
     }
 }

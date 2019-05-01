@@ -1,7 +1,7 @@
 package com.timbuchalka;
 
 /**
- * Created by dev on 8/3/15.
+ * Created by dev on 16/07/15.
  */
 public class Car extends Vehicle {
     private int doors;
